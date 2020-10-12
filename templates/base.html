@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <style type="text/css">
+    #jumbotron {
+    color: white!important;
+    background-image: url('static/bg1.jpg');
+    margin-top: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 250px 0px;
+    font-family: Montserrat, sans-serif;
+  }
+  	.navbar
+  	{
+  		background-color:dodgerblue;
+  		box-shadow: 1px 4px 7px black;
+  		border:none;
+  		border-bottom: 2px solid black;
+  	}
+  	body
+  	{
+	 font-family:Montserrat; 		
+   font-size: 16px;
+   background-size:cover;
+   overflow-x: hidden;
+
+  	}
+  	a
+  	{
+  		color: white !important;
+  	}
+    li,.help-block
+    {
+      color: white !important;
+    }
+  	button	
+  	{
+  		color: white !important;
+  		background: black !important;
+  	}
+  	a:hover
+  	{
+  		background-color: black !important;
+  		color:white; 
+  		transition: 0.6s !important;
+  	}
+  	
+  	html
+  	{
+  		scroll-behavior: smooth;
+      min-height: 100vh;
+  	}
+
+    #needy
+    {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .panel {
+    border:2px solid black; 
+    border-radius:3px !important;
+    margin:3px;
+
+  }
+  
+  
+  
+
+  </style>
+
+  </head>
+
+<body data-spy="scroll" data-target=".navbar">
+  
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a href="" class="navbar-brand" style="font-size:35px;">Give India</a>
+				<button class="navbar-toggle" data-toggle="collapse" data-target="#mydiv">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="collapse navbar-collapse" id="mydiv">
+			
+        
+      	<ul class="nav navbar-nav">
+					
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+	       
+
+					<li><a href="{% url 'donate' %}">Donate</a></li>
+					<li><a href="{% url 'needy' %}">Needy</a></li>
+					
+				</ul>			
+
+          
+
+	<ul class="nav navbar-nav navbar-right">
+	<li class="dropdown">
+	<a href="" class="dropdown-toggle" type="button" data-toggle="dropdown">Account
+  <span class="caret"></span></a>
+  <ul class="dropdown-menu" style="background-color: dodgerblue;">
+    <li>
+
+    {% if not user.is_authenticated %}
+      <a href="{% url 'login' %}">Login</a></li>
+					<li><a href="{% url 'signup' %}">SignUp</a></li>
+		{% else %}
+    			<li><a href="{% url 'logout' %}">Logout</a></li>
+    
+					
+    </ul>
+  				<li class="dropdown">
+            <a href="" class="dropdown-toggle" type="button" data-toggle="dropdown">Add Needies
+  <span class="caret"></span></a>
+  <ul class="dropdown-menu" style="background-color: dodgerblue;">
+    <li><a href="{% url 'addneedy' %}">Add Needy</a></li>
+    
+  </ul>
+  </li>
+{% endif %}
+				</ul>
+			</div>
+
+		</div>
+	</nav>
+
+{% block content %}
+	<section id="sec1" class="container-fluid" style="height: 100vh;">
+		
+<div id="jumbotron" class="jumbotron"> <h1 >Give India ...</h1> 
+   
+</div>
+
+<!-- Container (About Section) -->
+<div  id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2 >Areas we Serve</h2><br>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+  </div>
+</div>
+</div>
+
+<div  id="read" class="container-fluid ">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2 >What we Do</h2><br>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<div  id="write" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2 >Our Mission</h2><br>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <br><br><br>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="contact" class="container-fluid " >
+  <h2  class="text-center">SUPPORT</h2>
+  <div class="container">
+  <div class="text-center">
+  <div class="row">
+    <div class="col-sm-2 col-xs-6">
+      <div> 
+      <h3>Company</h3>
+      <p id="p" onclick="window.location.href='{% url 'about' %}'">About</p>
+      <p id="p" onclick="window.location.href='{% url 'about' %}'">Press</p>
+      <p id="p" onclick="window.location.href='{% url 'about' %}'">Headquarters</p>
+      
+    </div>
+    </div>
+    <div class="col-sm-2 col-xs-6">
+          
+        <div class="row">
+      <h3>Community</h3>
+      <p id="p" onclick="window.location.href='{% url 'about' %}'">For Education</p>
+      <p id="p" onclick="window.location.href='{% url 'about' %}'">For Business</p>
+      <p id="p" onclick="window.location.href='{% url 'about' %}'">Sponsorships</p>
+     
+        </div>
+    </div>
+    <div class="col-sm-2 col-xs-6">
+        <div class="row">
+
+      <h3>Social</h3>
+      <p id="p" onclick="window.location.href='https://www.Facebook.com'">Facebook</p>
+      <p id="p" onclick="window.location.href='https://www.Instagram.com/the_nabeelahmad'">Instagram</p>
+      <p id="p" onclick="window.location.href='https://www.Twitter.com/the_nabeelahmad'">Twitter</p>
+
+        </div>
+    </div>
+    
+    <div class="col-sm-2 col-xs-6">
+        <div class="row">
+
+      <h3>Resources</h3>
+      <p id="p">Partnerships</p>
+      <p id="p">Webinars</p>
+      <p id="p">Events</p>
+
+        </div>
+    </div>
+
+        <div class="col-sm-4">
+      <div class="row">
+        <h3>Contact</h3>
+        <form action="/" method="post" >
+          {% csrf_token %}
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="mail" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="msg" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-action">
+          <button class="btn btn-success pull-right" type="submit">Send</button>
+        </div>
+      </div>
+  </form>
+    </div>
+  </div> 
+
+</div>
+<div class="text-center">
+  <hr>
+  <h5>NABEEL AHMAD</h5>
+</div>
+
+	</section>
+
+      
+</div>
+</div>
+
+
+{% endblock %}
+
+
+<!-- Container (Contact Section) -->
+<hr>
+
+<script>
+  AOS.init({
+  	duration:2000,
+  });
+</script>
+</body>
+</html>

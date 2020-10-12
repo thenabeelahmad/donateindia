@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load bootstrap3 %}
+
+
+	<section id="needy" class="container" style="background-image: url('/static/d.jpg');background-size:cover;height: 110vh;margin-top: 100px;">
+		
+	<div class="jumbotron" data-aos="fade-up" data-aos-duration="2000" style="background-color:rgb(0,0,0,0.1);min-height:50vh">
+		
+	<form action="" method="POST" enctype="multipart/form-data">
+					{% csrf_token %}
+		<h2>Fill the Details of the Needy</h2>
+		<div class="col-sm-3 form-group">
+		<label>Name:</label>
+          <input class="form-control" id="name" name="name"  type="text" required>
+        </div>
+        <div class="col-sm-3 form-group">
+        	<label>Age:</label>
+          <input class="form-control" id="email" name="age"  type="number" required>
+        </div>
+      
+					<div class="col-sm-6 form-group">
+		<label>Address:</label>
+          <input class="form-control" id="name" name="address"  type="text" required>
+        </div>
+        
+      
+					<div class="col-sm-3 form-group">
+						<label>Siblings:</label>
+						<input type="number" name="siblings" value=""  class="form-control">
+					</div>
+					<div class="col-sm-3 form-group">
+						<label>Family Income:</label>
+						<input type="number" name="familyincome" value="" class="form-control">
+					</div>
+					
+					
+					<div class="col-sm-6 form-group">
+						<label>Photo:</label>
+						<input type="file" name="pic" value="" class="form-control">
+					</div>
+					
+					
+
+					<div class="col-sm-6 form-group">
+						<input type="submit" class="btn btn-info">
+					</div>
+				</form>
+				
+			
+	</div>	
+
+	</section>
+{% endblock %}

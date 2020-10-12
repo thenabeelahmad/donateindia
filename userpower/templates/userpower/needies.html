@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load bootstrap3 %}
+
+
+	<section id="sec1" class="container-fluid" >
+		
+		<div class="jumbotron" style="position: relative;top:70px;min-height:73vh;background-color: transparent;border:2px solid white;" data-aos="zoom-in">
+			<div class="container-fluid ">
+				<h1>Help the Poors</h1>
+{% for i in data %}
+    <div class="col-sm-3 col-xs-12">  
+      <div class="row">
+      <div class="panel panel-default ">
+        <div class="panel-heading">
+          <img src="{{i.5}}" style="height: 300px; width: 300px ">
+          <h5></h5>
+          <p id="needy">Name : {{i.0}}</p>
+          <p id="needy">Age : {{i.1}}</p>
+          <p id="needy">City : {{i.2}}</p>
+          <p id="needy">Siblings : {{i.3}}</p>
+          <p id="needy">Family Income : {{i.4}}</p>
+          
+          <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_Fo52HtUkhMjOR3"> </script> </form>
+        </div>
+      </div>      
+    		
+      
+      </div>
+    </div>
+{% endfor %}
+</div>
+		</div>
+
+	</section>
+{% endblock %}
